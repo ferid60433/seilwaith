@@ -1,0 +1,323 @@
+RO 100 stats
+
+TR 0
+
+QS  "R_NonBoundary"	{ *+* }
+QS  "R_Silence"		{ *+sil }
+
+QS  "R_Cons"		{ *+b,*+d,*+g,*+p,*+t,*+c,*+ch,*+ff,*+h,*+s,*+z,*+sh,*+th,*+ll,*+dd,*+f,*+dz,*+ts,*+m,*+n,*+ng,*+nn,*+nh,*+mh,*+ngh,*+l,*+j,*+w,*+r,*+rh }
+
+QS  "R_VLCons"		{ *+p,*+t,*+c,*+nh,*+mh,*+ngh,*+ch,*+ff,*+h,*+s,*+sh,*+th,*+ll,*+rh,*+ts }
+QS  "R_VCons"		{ *+b,*+d,*+g,*+m,*+n,*+ng,*+nn,*+dd,*+f,*+r,*+l,*+j,*+w,*+dz }
+QS  "R_VLAll"		{ *+p,*+t,*+c,*+nh,*+mh,*+ngh,*+ch,*+ff,*+h,*+s,*+sh,*+th,*+ll,*+rh,*+sil }
+
+QS  "R_Stop"		{ *+b,*+d,*+g,*+p,*+t,*+c }
+QS  "R_Fricative"	{ *+ch,*+ff,*+h,*+s,*+sh,*+z,*+th,*+ll,*+dd,*+f }
+QS  "R_Affricate"	{ *+dz, *+ts }
+QS  "R_Nasal"		{ *+m,*+n,*+ng,*+nn,*+nh,*+mh,*+ngh }
+QS  "R_Liquid"		{ *+l,*+j,*+w }
+QS  "R_TrillTap"	{ *+r,*+rh }
+QS  "R_GW"		{ *+gwl,*+gwn,*+gwr }
+QS  "R_Lateral"		{ *+ll,*+l }
+
+QS  "R_C-Front"		{ *+b,*+p,*+m,*+mh,*+ff,*+th,*+dd,*+f,*+w }
+QS  "R_C-Central"	{ *+d,*+t,*+z,*+n,*+nn,*+nh,*+s,*+sh,*+ll,*+l,*+r,*+rh,*+ts,*+dz }
+QS  "R_C-Back"		{ *+g,*+c,*+ng,*+ngh,*+ch,*+h,*+j }
+
+QS  "R_Frontstop"	{ *+b,*+p }
+QS  "R_Centralstop"	{ *+d,*+t }
+QS  "R_Backstop"	{ *+g,*+c }
+QS  "R_Frontfric"	{ *+ff,*+f }
+QS  "R_Centralfric"	{ *+th,*+dd,*+s,*+sh,*+ll }
+QS  "R_Backfric"	{ *+sh,*+ch,*+h }
+
+QS  "R_Bilabial"	{ *+b,*+p,*+m,*+mh }
+QS  "R_Labiodental"	{ *+ff,*+f }
+QS  "R_Dental"		{ *+th, *+dd }
+QS  "R_Alveolar"	{ *+t,*+d,*+s,*+z,*+n,*+nn,*+nh,*+r,*+rh,*+ll,*+l }
+QS  "R_Postalveolar"	{ *+sh,*+ts,*+dz }
+QS  "R_Palatal"		{ *+j }
+QS  "R_Velar"		{ *+c,*+g,*+ng,*+ngh }
+QS  "R_Uvular"		{ *+ch,*+h }
+
+QS  "R_VStop"		{ *+b,*+d,*+g }
+QS  "R_VLStop"		{ *+p,*+t,*+c }
+QS  "R_VNasal"		{ *+m,*+n,*+ng,*+nn }
+QS  "R_VLNasal"		{ *+nh,*+mh,*+ngh }
+QS  "R_VFricative"	{ *+dd,*+f }
+QS  "R_VLFricative"	{ *+ch,*+ff,*+h,*+s,*+sh,*+th,*+ll }
+QS  "R_VTrillTap"	{ *+r }
+QS  "R_VLTrillTap"	{ *+rh }
+QS  "R_VAffricate"	{ *+dz }
+QS  "R_VLAffricate"	{ *+ts }
+QS  "R_VLLateral"	{ *+ll }
+
+
+QS  "R_Vowel"		{ *+A,*+E,*+I,*+O,*+U,*+W,*+Y,*+AA,*+EE,*+II,*+OO,*+UU,*+WW,*+YY,*+@,*+AE,*+AI,*+AU,*+AW,*+EI,*+EU,*+EW,*+IA,*+IAE,*+IAI,*+IAU,*+IE,*+IO,*+IW,*+OE,*+OI,*+OW,*+UW,*+WY,*+YW }
+QS  "R_Mono"		{ *+A,*+E,*+I,*+O,*+U,*+W,*+Y,*+@,*+AA,*+EE,*+II,*+OO,*+UU,*+WW,*+YY }
+QS  "R_Dip"		{ *+AE,*+AI,*+AU,*+AW,*+EI,*+EU,*+EW,*+IA,*+IAE,*+IAI,*+IAU,*+IE,*+IO,*+IW,*+OE,*+OI,*+OW,*+UW,*+WY,*+YW }
+
+QS  "R_V-Front"		{ *+A,*+E,*+I,*+AA,*+EE,*+II }
+QS  "R_V-Central"	{ *+U,*+@,*+Y,*+UU,*+YY }
+QS  "R_V-Back"		{ *+O,*+W,*+OO,*+WW }
+QS  "R_Long"		{ *+AA,*+EE,*+II,*+OO,*+UU,*+WW,*+YY }
+QS  "R_Short"		{ *+A,*+E,*+I,*+O,*+U,*+W,*+Y,*+@ }
+QS  "R_High"		{ *+I,*+U,*+W,*+Y,*+II,*+UU,*+WW,*+YY }
+QS  "R_Mid"		{ *+E,*+@,*+EE }
+QS  "R_Low"		{ *+A,*+O,*+AA,*+OO }
+QS  "R_Rounded"		{ *+W,*+O,*+WW,*+OO }
+QS  "R_Unrounded"	{ *+I,*+U,*+Y,*+A,*+@,*+II,*+UU,*+YY,*+AA }
+QS  "R_IVowel"		{ *+I,*+II }
+QS  "R_EVowel"		{ *+E,*+EE }
+QS  "R_AVowel"		{ *+A,*+AA }
+QS  "R_OVowel"		{ *+O,*+OO }
+QS  "R_@Vowel"		{ *+@ }
+QS  "R_WVowel"		{ *+W,*+WW }
+QS  "R_YVowel"		{ *+Y,*+YY }
+
+QS  "R_Front"		{ *+b,*+p,*+m,*+mh,*+ff,*+th,*+dd,*+f,*+w,*+A,*+E,*+I,*+AA,*+EE,*+II }
+QS  "R_Central"		{ *+d,*+t,*+n,*+nn,*+s,*+sh,*+ts,*+dz,*+ll,*+l,*+r,*+rh,*+U,*+@,*+Y,*+UU,*+YY }
+QS  "R_Back"		{ *+g,*+c,*+ng,*+ngh,*+ch,*+h,*+j,*+O,*+W,*+OO,*+WW}
+
+QS  "R_Fortis"		{ *+p,*+t,*+k,*+f,*+th,*+s,*+sh,*+ts }
+QS  "R_Lenis"		{ *+b,*+d,*+g,*+dd,*+f,*+dz }
+QS  "R_UnFortLenis"	{ *+m,*+n,*+ng,*+nn,*+nh,*+mh,*+ngh,*+hh,*+l,*+ll,*+r,*+rh,*+j,*+w }
+QS  "R_Coronal"		{ *+d,*+t,*+n,*+nn,*+th,*+dd,*+s,*+sh,*+ll,*+l,*+r,*+rh,*+l,*+ll,*+r,*+rh,*+ts,*+dz }
+QS  "R_NonCoronal"	{ *+b,*+p,*+m,*+mh,*+ff,*+f,*+w,*+g,*+c,*+ng,*+ngh,*+ch,*+h,*+j }
+QS  "R_Anterior"	{ *+b,*+p,*+m,*+mh,*+ff,*+th,*+dd,*+f,*+w,*+d,*+t,*+n,*+nn,*+s,*+ll,*+l,*+r,*+rh }
+QS  "R_NonAnterior"	{ *+sh,*+g,*+c,*+ng,*+ngh,*+ch,*+h,*+j,*+ts,*+dz }
+
+QS  "R_Cont"		{ *+m,*+n,*+ng,*+nn,*+nh,*+mh,*+ngh,*+ch,*+ff,*+h,*+s,*+sh,*+th,*+ll,*+dd,*+f,*+l,*+j,*+w,*+r,*+rh }
+QS  "R_NonCont"		{ *+b,*+d,*+g,*+p,*+t,*+c,*+ts,*+dz }
+QS  "R_Strident"	{ *+s,*+sh }
+QS  "R_NonStrident"	{ *+ch,*+ff,*+h,*+th,*+ll,*+dd,*+f }
+QS  "R_UnStrident"	{ *+b,*+d,*+g,*+p,*+t,*+c,*+m,*+n,*+ng,*+nn,*+nh,*+mh,*+ngh,*+l,*+j,*+w,*+r,*+rh }
+QS  "R_Glide"		{ *+j,*+w }
+QS  "R_Syllabic"	{ *+r,*+n,*+nn,*+l }
+
+QS  "R_b"		{ *+b }
+QS  "R_d"		{ *+d }
+QS  "R_g"		{ *+g }
+QS  "R_p"		{ *+p }
+QS  "R_t"		{ *+t }
+QS  "R_c"		{ *+c }
+QS  "R_m"		{ *+m }
+QS  "R_n"		{ *+n }
+QS  "R_ng"		{ *+ng }
+QS  "R_nn"		{ *+nn }
+QS  "R_mh"		{ *+mh }
+QS  "R_nh"		{ *+nh }
+QS  "R_ngh"		{ *+ngh }
+QS  "R_dd"		{ *+dd }
+QS  "R_f"		{ *+f }
+QS  "R_ch"		{ *+ch }
+QS  "R_ff"		{ *+ff }
+QS  "R_h"		{ *+h }
+QS  "R_s"		{ *+s }
+QS  "R_ts"		{ *+ts }
+QS  "R_dz"		{ *+dz }
+QS  "R_sh"		{ *+sh }
+QS  "R_th"		{ *+th }
+QS  "R_z"		{ *+s }
+QS  "R_ll"		{ *+ll }
+QS  "R_l"		{ *+l }
+QS  "R_j"		{ *+j }
+QS  "R_w"		{ *+w }
+QS  "R_r"		{ *+r }
+QS  "R_rh"		{ *+rh }
+QS  "R_gwl"		{ *+gwl }
+QS  "R_gwn"		{ *+gwn }
+QS  "R_gwr"		{ *+gwr }
+QS  "R_A"		{ *+A }
+QS  "R_E"		{ *+E }
+QS  "R_I"		{ *+I }
+QS  "R_O"		{ *+O }
+QS  "R_U"		{ *+U }
+QS  "R_W"		{ *+W }
+QS  "R_Y"		{ *+Y }
+QS  "R_@"		{ *+@ }
+QS  "R_A"		{ *+AA }
+QS  "R_E"		{ *+EE }
+QS  "R_I"		{ *+II }
+QS  "R_O"		{ *+OO }
+QS  "R_U"		{ *+UU }
+QS  "R_W"		{ *+WW }
+QS  "R_Y"		{ *+YY }
+QS  "R_AE"		{ *+AE }
+QS  "R_AI"		{ *+AI }
+QS  "R_AU"		{ *+AU }
+QS  "R_AW"		{ *+AW }
+QS  "R_EI"		{ *+EI }
+QS  "R_EU"		{ *+EU }
+QS  "R_EW"		{ *+EW }
+QS  "R_IAI"		{ *+IAI }
+QS  "R_IAW"		{ *+IAW }
+QS  "R_IA"		{ *+IA }
+QS  "R_IW"		{ *+IW }
+QS  "R_OE"		{ *+OE }
+QS  "R_OI"		{ *+OI }
+QS  "R_OW"		{ *OW }
+QS  "R_UW"		{ *+UW }
+QS  "R_WY"		{ *+WY }
+QS  "R_YW"		{ *+YW }
+
+QS  "L_NonBoundary"	{ *-* }
+QS  "L_Silence"		{ sil-* }
+
+QS  "L_Cons"		{ b-*,d-*,g-*,p-*,t-*,c-*,ch-*,ff-*,h-*,s-*,z-*,sh-*,th-*,ll-*,dd-*,f-*,dz-*,ts-*,m-*,n-*,ng-*,nn-*,nh-*,mh-*,ngh-*,l-*,j-*,w-*,r-*,rh-* }
+
+QS  "L_VLCons"		{ p-*,t-*,c-*,nh-*,mh-*,ngh-*,ch-*,ff-*,h-*,s-*,sh-*,th-*,ll-*,rh-*,ts-* }
+QS  "L_VCons"		{ b-*,d-*,g-*,m-*,n-*,ng-*,nn-*,dd-*,f-*,r-*,l-*,j-*,w-*,dz-* }
+QS  "L_VLAll"		{ p-*,t-*,c-*,nh-*,mh-*,ngh-*,ch-*,ff-*,h-*,s-*,sh-*,th-*,ll-*,rh-*,sil-* }
+
+QS  "L_Stop"		{ b-*,d-*,g-*,p-*,t-*,c-* }
+QS  "L_Fricative"	{ ch-*,ff-*,h-*,s-*,sh-*,z-*,th-*,ll-*,dd-*,f-* }
+QS  "L_Affricate"	{ dz, ts-* }
+QS  "L_Nasal"		{ m-*,n-*,ng-*,nn-*,nh-*,mh-*,ngh-* }
+QS  "L_Liquid"		{ l-*,j-*,w-* }
+QS  "L_TrillTap"	{ r-*,rh-* }
+QS  "L_GW"		{ gwl-*,gwn-*,gwr-* }
+QS  "L_Lateral"		{ ll-*,l-* }
+
+QS  "L_C-Front"		{ b-*,p-*,m-*,mh-*,ff-*,th-*,dd-*,f-*,w-* }
+QS  "L_C-Central"	{ d-*,t-*,z-*,n-*,nn-*,nh-*,s-*,sh-*,ll-*,l-*,r-*,rh-*,ts-*,dz-* }
+QS  "L_C-Back"		{ g-*,c-*,ng-*,ngh-*,ch-*,h-*,j-* }
+
+QS  "L_Frontstop"	{ b-*,p-* }
+QS  "L_Centralstop"	{ d-*,t-* }
+QS  "L_Backstop"	{ g-*,c-* }
+QS  "L_Frontfric"	{ ff-*,f-* }
+QS  "L_Centralfric"	{ th-*,dd-*,s-*,sh-*,ll-* }
+QS  "L_Backfric"	{ sh-*,ch-*,h-* }
+
+QS  "L_Bilabial"	{ b-*,p-*,m-*,mh-* }
+QS  "L_Labiodental"	{ ff-*,f-* }
+QS  "L_Dental"		{ th, dd-* }
+QS  "L_Alveolar"	{ t-*,d-*,s-*,z-*,n-*,nn-*,nh-*,r-*,rh-*,ll-*,l-* }
+QS  "L_Postalveolar"	{ sh-*,ts-*,dz-* }
+QS  "L_Palatal"		{ j-* }
+QS  "L_Velar"		{ c-*,g-*,ng-*,ngh-* }
+QS  "L_Uvular"		{ ch-*,h-* }
+
+QS  "L_VStop"		{ b-*,d-*,g-* }
+QS  "L_VLStop"		{ p-*,t-*,c-* }
+QS  "L_VNasal"		{ m-*,n-*,ng-*,nn-* }
+QS  "L_VLNasal"		{ nh-*,mh-*,ngh-* }
+QS  "L_VFricative"	{ dd-*,f-* }
+QS  "L_VLFricative"	{ ch-*,ff-*,h-*,s-*,sh-*,th-*,ll-* }
+QS  "L_VTrillTap"	{ r-* }
+QS  "L_VLTrillTap"	{ rh-* }
+QS  "L_VAffricate"	{ dz-* }
+QS  "L_VLAffricate"	{ ts-* }
+QS  "L_VLLateral"	{ ll-* }
+
+QS  "L_Vowel"		{ A-*,E-*,I-*,O-*,U-*,W-*,Y-*,AA-*,EE-*,II-*,OO-*,UU-*,WW-*,YY-*,@-*,AE-*,AI-*,AU-*,AW-*,EI-*,EU-*,EW-*,IA-*,IAE-*,IAI-*,IAU-*,IE-*,IO-*,IW-*,OE-*,OI-*,OW-*,UW-*,WY-*,YW-* }
+QS  "L_Mono"		{ A-*,E-*,I-*,O-*,U-*,W-*,Y-*,@-*,AA-*,EE-*,II-*,OO-*,UU-*,WW-*,YY-* }
+QS  "L_Dip"		{ AE-*,AI-*,AU-*,AW-*,EI-*,EU-*,EW-*,IA-*,IAE-*,IAI-*,IAU-*,IE-*,IO-*,IW-*,OE-*,OI-*,OW-*,UW-*,WY-*,YW-* }
+
+QS  "L_V-Front"		{ A-*,E-*,I-*,AA-*,EE-*,II-* }
+QS  "L_V-Central"	{ U-*,@-*,Y-*,UU-*,YY-* }
+QS  "L_V-Back"		{ O-*,W-*,OO-*,WW-* }
+QS  "L_Long"		{ AA-*,EE-*,II-*,OO-*,UU-*,WW-*,YY-* }
+QS  "L_Short"		{ A-*,E-*,I-*,O-*,U-*,W-*,Y-*,@-* }
+QS  "L_High"		{ I-*,U-*,W-*,Y-*,II-*,UU-*,WW-*,YY-* }
+QS  "L_Mid"		{ E-*,@-*,EE-* }
+QS  "L_Low"		{ A-*,O-*,AA-*,OO-* }
+QS  "L_Rounded"		{ W-*,O-*,WW-*,OO-* }
+QS  "L_Unrounded"	{ I-*,U-*,Y-*,A-*,@-*,II-*,UU-*,YY-*,AA-* }
+QS  "L_IVowel"		{ I-*,II-* }
+QS  "L_EVowel"		{ E-*,EE-* }
+QS  "L_AVowel"		{ A-*,AA-* }
+QS  "L_OVowel"		{ O-*,OO-* }
+QS  "L_@Vowel"		{ @-* }
+QS  "L_WVowel"		{ W-*,WW-* }
+QS  "L_YVowel"		{ Y-*,YY-* }
+
+QS  "L_Front"		{ b-*,p-*,m-*,mh-*,ff-*,th-*,dd-*,f-*,w-*,A-*,E-*,I-*,AA-*,EE-*,II-* }
+QS  "L_Central"		{ d-*,t-*,n-*,nn-*,s-*,sh-*,ts-*,dz-*,ll-*,l-*,r-*,rh-*,U-*,@-*,Y-*,UU-*,YY-* }
+QS  "L_Back"		{ g-*,c-*,ng-*,ngh-*,ch-*,h-*,j-*,O-*,W-*,OO-*,WW}
+
+QS  "L_Fortis"		{ p-*,t-*,k-*,f-*,th-*,s-*,sh-*,ts-* }
+QS  "L_Lenis"		{ b-*,d-*,g-*,dd-*,f-*,dz-* }
+QS  "L_UnFortLenis"	{ m-*,n-*,ng-*,nn-*,nh-*,mh-*,ngh-*,hh-*,l-*,ll-*,r-*,rh-*,j-*,w-* }
+QS  "L_Coronal"		{ d-*,t-*,n-*,nn-*,th-*,dd-*,s-*,sh-*,ll-*,l-*,r-*,rh-*,l-*,ll-*,r-*,rh-*,ts-*,dz-* }
+QS  "L_NonCoronal"	{ b-*,p-*,m-*,mh-*,ff-*,f-*,w-*,g-*,c-*,ng-*,ngh-*,ch-*,h-*,j-* }
+QS  "L_Anterior"	{ b-*,p-*,m-*,mh-*,ff-*,th-*,dd-*,f-*,w-*,d-*,t-*,n-*,nn-*,s-*,ll-*,l-*,r-*,rh-* }
+QS  "L_NonAnterior"	{ sh-*,g-*,c-*,ng-*,ngh-*,ch-*,h-*,j-*,ts-*,dz-* }
+
+QS  "L_Cont"		{ m-*,n-*,ng-*,nn-*,nh-*,mh-*,ngh-*,ch-*,ff-*,h-*,s-*,sh-*,th-*,ll-*,dd-*,f-*,l-*,j-*,w-*,r-*,rh-* }
+QS  "L_NonCont"		{ b-*,d-*,g-*,p-*,t-*,c-*,ts-*,dz-* }
+QS  "L_Strident"	{ s-*,sh-* }
+QS  "L_NonStrident"	{ ch-*,ff-*,h-*,th-*,ll-*,dd-*,f-* }
+QS  "L_UnStrident"	{ b-*,d-*,g-*,p-*,t-*,c-*,m-*,n-*,ng-*,nn-*,nh-*,mh-*,ngh-*,l-*,j-*,w-*,r-*,rh-* }
+QS  "L_Glide"		{ j-*,w-* }
+QS  "L_Syllabic"	{ r-*,n-*,nn-*,l-* }
+
+QS  "L_b"		{ b-* }
+QS  "L_d"		{ d-* }
+QS  "L_g"		{ g-* }
+QS  "L_p"		{ p-* }
+QS  "L_t"		{ t-* }
+QS  "L_c"		{ c-* }
+QS  "L_m"		{ m-* }
+QS  "L_n"		{ n-* }
+QS  "L_ng"		{ ng-* }
+QS  "L_nn"		{ nn-* }
+QS  "L_mh"		{ mh-* }
+QS  "L_nh"		{ nh-* }
+QS  "L_ngh"		{ ngh-* }
+QS  "L_dd"		{ dd-* }
+QS  "L_f"		{ f-* }
+QS  "L_ch"		{ ch-* }
+QS  "L_ff"		{ ff-* }
+QS  "L_h"		{ h-* }
+QS  "L_s"		{ s-* }
+QS  "L_ts"		{ ts-* }
+QS  "L_dz"		{ dz-* }
+QS  "L_sh"		{ sh-* }
+QS  "L_th"		{ th-* }
+QS  "L_z"		{ s-* }
+QS  "L_ll"		{ ll-* }
+QS  "L_l"		{ l-* }
+QS  "L_j"		{ j-* }
+QS  "L_w"		{ w-* }
+QS  "L_r"		{ r-* }
+QS  "L_rh"		{ rh-* }
+QS  "L_gwl"		{ gwl-* }
+QS  "L_gwn"		{ gwn-* }
+QS  "L_gwr"		{ gwr-* }
+QS  "L_A"		{ A-* }
+QS  "L_E"		{ E-* }
+QS  "L_I"		{ I-* }
+QS  "L_O"		{ O-* }
+QS  "L_U"		{ U-* }
+QS  "L_W"		{ W-* }
+QS  "L_Y"		{ Y-* }
+QS  "L_@"		{ @-* }
+QS  "L_A"		{ AA-* }
+QS  "L_E"		{ EE-* }
+QS  "L_I"		{ II-* }
+QS  "L_O"		{ OO-* }
+QS  "L_U"		{ UU-* }
+QS  "L_W"		{ WW-* }
+QS  "L_Y"		{ YY-* }
+QS  "L_AE"		{ AE-* }
+QS  "L_AI"		{ AI-* }
+QS  "L_AU"		{ AU-* }
+QS  "L_AW"		{ AW-* }
+QS  "L_EI"		{ EI-* }
+QS  "L_EU"		{ EU-* }
+QS  "L_EW"		{ EW-* }
+QS  "L_IAI"		{ IAI-* }
+QS  "L_IAW"		{ IAW-* }
+QS  "L_IA"		{ IA-* }
+QS  "L_IW"		{ IW-* }
+QS  "L_OE"		{ OE-* }
+QS  "L_OI"		{ OI-* }
+QS  "L_OW"		{ *OW-* }
+QS  "L_UW"		{ UW-* }
+QS  "L_WY"		{ WY-* }
+QS  "L_YW"		{ YW-* }
+
+TR 2
+

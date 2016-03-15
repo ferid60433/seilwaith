@@ -1,0 +1,3 @@
+[submodule "srdk/cy/lang_tools/llef"]
+	path = srdk/cy/lang_tools/llef
+	url = https://github.com/techiaith/welsh-lts.git

@@ -1,0 +1,16 @@
+#!/bin/bash
+CORPUS_NAME="$1"
+VOCAB_SIZE="$2"
+
+echo ${CORPUS_NAME}, ${VOCAB_SIZE}
+cd ${CORPUS_NAME}
+
+cp /usr/local/src/htk/samples/LMTutorial/config .
+
+LFoF -T 1 -n 4 -f 32 lm_${VOCAB_SIZE}/${VOCAB_SIZE}.wmap lm_${VOCAB_SIZE}/${VOCAB_SIZE}.fof lm.1/data.* lm_${VOCAB_SIZE}/data.*
+LFoF -C config -T 1 -n 4 -f 32 lm_${VOCAB_SIZE}/${VOCAB_SIZE}.wmap lm_${VOCAB_SIZE}/${VOCAB_SIZE}.fof lm.1/data.* lm_${VOCAB_SIZE}/data.*
+LBuild -T 1 -n 1 lm_${VOCAB_SIZE}/${VOCAB_SIZE}.wmap  lm_${VOCAB_SIZE}/ug lm.1/data.* lm_${VOCAB_SIZE}/data.*
+LBuild -T 1 -c 2 1 -n 2 -C config -t lm_${VOCAB_SIZE}/${VOCAB_SIZE}.fof -l lm_${VOCAB_SIZE}/ug lm_${VOCAB_SIZE}/${VOCAB_SIZE}.wmap lm_${VOCAB_SIZE}/bg1 lm.1/data.* lm_${VOCAB_SIZE}/data.*
+LBuild -T 1 -c 3 1 -n 3 -l lm_${VOCAB_SIZE}/bg1 lm_${VOCAB_SIZE}/${VOCAB_SIZE}.wmap lm_${VOCAB_SIZE}/tg1_1 lm.1/data.* lm_${VOCAB_SIZE}/data.*
+
+cd -

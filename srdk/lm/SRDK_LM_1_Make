@@ -1,0 +1,40 @@
+#!/bin/bash
+CORPUS_NAME="$1"
+#DICT_SIZE="$2"
+
+echo ${CORPUS_NAME} #, ${DICT_SIZE}
+
+rm -rf ${CORPUS_NAME}
+mkdir -p ${CORPUS_NAME}/reverse
+cd ${CORPUS_NAME}
+
+
+gzip -c /srdk_projects/cy/corpus/text/${CORPUS_NAME}/*.txt > training.gz
+
+dict -i="gunzip -c training.gz" -o=dict -f=y -sort=no
+(echo DICTIONARY; cat dict | awk '{if ($2>=5) print}') > sdict
+
+echo "### build-lm.sh ###"
+build-lm.sh -i "gunzip -c training.gz" -n 3 -d sdict -t ./tmp -p -s improved-kneser-ney -o sublm.irstlm.gz 
+
+echo "### compile-lm  ###"
+compile-lm --text=yes sublm.irstlm.gz lm.irstlm.arpa
+
+cd - 
+
+echo "##### REVERSE MODEL #######"
+cd ${CORPUS_NAME}/reverse
+gzip -c /srdk_projects/cy/corpus/text/${CORPUS_NAME}/reverse/*.txt > training.gz
+
+dict -i="gunzip -c training.gz" -o=dict -f=y -sort=no
+(echo DICTIONARY; cat dict | awk '{if ($2>=5) print}') > sdict
+
+echo "### reverse model, build-lm.sh ###"
+build-lm.sh -i "gunzip -c training.gz" -n 3 -d sdict -t ./tmp -p -s improved-kneser-ney -o sublm.irstlm.gz
+
+echo "### reverse model, compile-lm  ###"
+compile-lm --text=yes sublm.irstlm.gz lm.irstlm.arpa
+
+cd -
+
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CORPUS_NAME="$1"
+VOCAB_SIZE="$2"
+
+echo ${CORPUS_NAME}
+cd ${CORPUS_NAME}
+LPlex -T 1 -n 2 -n 3 -t lm_${VOCAB_SIZE}/tg1_1 /srdk_projects/cy/corpus/text/${CORPUS_NAME}/test/test.txt
+cd -

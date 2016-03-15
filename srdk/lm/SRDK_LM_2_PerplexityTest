@@ -1,0 +1,5 @@
+#!/bin/bash
+CORPUS_NAME="$1"
+MODEL_LANG="$2"
+
+compile-lm ${CORPUS_NAME}/lm.irstlm.arpa --eval=/srdk_projects/cy/corpus/text/${CORPUS_NAME}/test/${CORPUS_NAME}.${MODEL_LANG}.txt

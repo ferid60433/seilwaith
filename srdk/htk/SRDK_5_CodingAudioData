@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cp /usr/local/srdk/htk/wav_config .
+
+cp /usr/local/srdk/htk/make_codetrain_scp.py .
+
+#if [ -z "$1" ] 
+if [ $# -eq 0 ]
+then
+	python make_codetrain_scp.py
+else
+	python make_codetrain_scp.py --userid=$1
+fi
+
+rm make_codetrain_scp.py
+
+HCopy -A -D -T 1 -C wav_config -S codetrain.scp

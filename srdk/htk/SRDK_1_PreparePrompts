@@ -1,0 +1,11 @@
+#!/bin/bash
+
+HParse gram wdnet
+
+HSGen -l -n 50 wdnet lexicon > samples_tmp.txt
+
+perl /usr/local/srdk/htk/fixsampleprompts.pl samples_tmp.txt samples.txt
+
+python /usr/local/srdk/htk/make_pythonserver_promptsfile.py 
+
+rm samples_tmp.txt

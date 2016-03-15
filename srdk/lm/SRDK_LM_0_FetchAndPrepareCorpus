@@ -1,0 +1,58 @@
+#!/bin/bash
+
+usage() { echo "Usage: $0 -e <model name> -s <model language>" 1>&2; exit 1; }
+
+DATA_URL=http://techiaith.cymru/corpws/Testunau/
+TEST_URL=http://techiaith.cymru/corpws/Testunau/Profi
+
+while getopts "e:s:" o; do
+	case "${o}" in
+		e)
+			NAME=${OPTARG}		
+			echo "Name of model/engine/collection : ${NAME}" 
+			;;
+		s)
+			MODEL_LANG=${OPTARG}
+			echo "Model language" : ${MODEL_LANG}
+			;;
+		*)
+			usage	
+			;;
+	esac
+done  
+shift $((OPTIND-1))
+
+if [ -z "${NAME}" ] || [ -z "${MODEL_LANG}" ]; then
+    usage
+fi
+
+mkdir -p /srdk_projects/${MODEL_LANG}/corpus/text/${NAME}/test
+mkdir -p /srdk_projects/${MODEL_LANG}/corpus/text/${NAME}/reverse
+mkdir -p /srdk_projects/${MODEL_LANG}/corpus/text/${NAME}/test/reverse
+
+cd /srdk_projects/${MODEL_LANG}/corpus/text/${NAME}
+wget -O - ${DATA_URL}/${NAME}.tar.gz | tar -zxf -
+
+for f in *.${MODEL_LANG}
+do
+	echo "Processing file $f...."
+	Tokenize.py -i $f -o $f.txt -r reverse/$f.txt
+done
+find . -type f -not -name '*.txt' | xargs rm
+
+cd -
+
+
+cd /srdk_projects/${MODEL_LANG}/corpus/text/${NAME}/test
+wget -O - ${TEST_URL}/${NAME}.tar.gz | tar -zxf -
+
+for f in *.${MODEL_LANG}
+do
+        echo "Processing test file $f...."
+        Tokenize.py -i $f -o $f.txt -r reverse/$f.txt
+done
+find . -type f -not -name '*.txt' | xargs rm
+
+cd -
+
+

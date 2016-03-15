@@ -1,0 +1,30 @@
+#!/bin/bash
+
+mkdir -p hmm13 hmm14 hmm15
+
+cp /usr/local/srdk/htk/maketriphone.ded .
+cp /usr/local/srdk/htk/fixfulllist.pl .
+
+HDMan -A -D -T 1 -b sp -n fulllist0 -g maketriphone.ded -l flog dict-tri lexicon
+
+cat fulllist0 triphones1 > fulllist1
+perl fixfulllist.pl fulllist1 fulllist
+
+cat tree1.hed > tree.hed
+perl /usr/local/src/htk/samples/RMHTK/perl_scripts/mkclscript.prl TB 350 monophones0 >> tree.hed
+
+echo "" >> tree.hed
+echo "TR 1" >> tree.hed
+echo "" >> tree.hed
+echo "AU \"fulllist\"" >> tree.hed
+echo "CO \"tiedlist\"" >> tree.hed
+echo "" >> tree.hed
+echo "ST \"trees\"" >> tree.hed
+echo "" >> tree.hed
+
+HHEd -A -D -T 512 -H hmm12/macros -H hmm12/hmmdefs -M hmm13 tree.hed triphones1
+
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 3000.0 -S train.scp -H hmm13/macros -H hmm13/hmmdefs -M hmm14 tiedlist
+
+HERest -A -D -T 1 -T 1 -C config -I wintri.mlf  -t 250.0 150.0 3000.0 -S train.scp -H hmm14/macros -H hmm14/hmmdefs -M hmm15 tiedlist
+

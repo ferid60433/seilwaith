@@ -1,0 +1,14 @@
+#!/bin/bash
+CORPUS_NAME="$1"
+echo ${CORPUS_NAME}
+
+rm -rf ${CORPUS_NAME}
+mkdir -p ${CORPUS_NAME}
+cd ${CORPUS_NAME}
+
+mkdir lm.0 lm.1
+LNewMap -f WFC ${CORPUS_NAME} empty.wmap
+LGPrep -T 1 -a 1000000 -b 200000 -d lm.0 -n 4 -s "Language Model" empty.wmap /srdk_projects/cy/corpus/text/${CORPUS_NAME}/*.txt
+LGCopy -T 1 -b 200000 -d lm.1 lm.0/wmap lm.0/gram.*
+cd - 
+

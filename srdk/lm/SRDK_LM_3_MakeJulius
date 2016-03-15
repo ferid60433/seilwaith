@@ -1,0 +1,29 @@
+#!/bin/bash
+CORPUS_NAME="$1"
+MODEL_LANG="$2"
+
+echo ${CORPUS_NAME}, ${MODEL_LANG}
+
+mkdir -p ${CORPUS_NAME}/julius
+cd ${CORPUS_NAME}
+mkbingram -nlr lm.irstlm.arpa -nrl reverse/lm.irstlm.arpa  julius/${CORPUS_NAME}.${MODEL_LANG}.julius.lm
+cp sdict julius/lexicon0
+cd -
+
+cd ${CORPUS_NAME}/julius
+cp /usr/local/srdk/htk/sort.py .
+python3 sort.py lexicon0
+cat lexicon0 | cut -d' ' -f-1 > lexicon1
+cat lexicon1 | python /usr/local/srdk/cy/lang_tools/llef/htk_annotate.py > lexicon3
+echo "<s>         []          sil" >> lexicon
+echo "</s>        []          sil" >> lexicon
+cat lexicon3 >> lexicon
+rm lexicon0 lexicon1 lexicon2 lexicon3
+rm sort.py
+
+tar zcvf ${CORPUS_NAME}.${MODEL_LANG}.julius.lm.tar.gz *
+
+cd -
+
+
+

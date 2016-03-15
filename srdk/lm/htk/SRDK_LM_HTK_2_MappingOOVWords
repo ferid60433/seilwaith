@@ -1,0 +1,13 @@
+#!/bin/bash
+CORPUS_NAME="$1"
+VOCAB_SIZE="$2"
+
+echo ${CORPUS_NAME}, ${VOCAB_SIZE}
+
+cd ${CORPUS_NAME}
+
+mkdir -p lm_${VOCAB_SIZE}
+most_common_words.py -d /srdk_projects/cy/corpus/text/${CORPUS_NAME} -o lm_${VOCAB_SIZE}/vocab -c ${VOCAB_SIZE}
+LGCopy -T 1 -o -m lm_${VOCAB_SIZE}/${VOCAB_SIZE}.wmap -b 200000 -d lm_${VOCAB_SIZE} -w lm_${VOCAB_SIZE}/vocab lm.0/wmap lm.1/data.*
+
+cd -

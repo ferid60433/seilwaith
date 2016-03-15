@@ -1,0 +1,21 @@
+#!/bin/bash
+rm -rf release
+mkdir -p release
+
+# copio hmmdefs, macros, tiedlist confog wav_config dict a stats
+cp -v hmm15/hmmdefs release
+cp -v hmm15/macros release
+cp -v tiedlist release
+#cp -v config release
+#cp -v wav_config release
+cp -v dict release
+#cp -v stats release
+
+cd release
+tar -pczf "paldaruo-$(date +"%Y-%m-%d").tar.gz" *
+cd - 
+
+cp -v lexicon release
+cd release
+tar -pczf "lexicon-$(date +"%Y-%m-%d").tar.gz" lexicon
+cd -
