@@ -24,8 +24,8 @@ Bydd angen cyfrifiadur gyda system weithredu Linux fel Ubuntu neu RedHat ar gyfe
 ```
 ~$ mkdir src
 ~$ cd src
-~/src$ git clone https://github.com/techiaith/SpeechRecDevKit.git
-~/src$ cd SpeechRecDevKit
+~/src$ git clone https://github.com/techiaith/seilwaith.git
+~/src$ cd seilwaith
 ```
 
 Mae'r project yn defnyddio'r HTK i gynhyrchu modelau acwstig. Mae rhaid i chi gofrestru ar wefan http://htk.eng.cam.ac.uk, er mwyn derbyn enw defnyddiwr a chyfrinair er mwyn llwytho'r cod ffynhonnell i lawr. Mae modd llwytho'r cod i lawr fel hyn:
@@ -39,13 +39,13 @@ Bydd yn gofyn am eich cyfrinair yn y man.
 Bydd ddwy ffeil, HTK-3.4.1.tar.gz a HTK-samples-3.4.1.tar.gz yn bodoli o fewn y cyfeiriadur 'SpeechRecDevKit'. h.y.:
 
 ```
-~/src/SpeechRecDevKit$ ls
+~/src/seilwaith $ ls
 Dockerfile  HTK-3.4.1.tar.gz  HTK-samples-3.4.1.tar.gz  Makefile  README.md  srdk
 ```
 
 Y cam nesaf yw teipio:
 
-`~/src/SpeechRecDevKit$ make`
+`~/src/seilwaith $ make`
 
 Bydd hyn yn adeiladu rhannau craidd yr amgylchedd hyfforddi gan ddefnyddio'r ffeiliau HTK rydych wedi llwytho i lawr ar wahân. Pan mae wedi cwblhau, teipiwch i mewn 
 
@@ -53,7 +53,7 @@ Bydd hyn yn adeiladu rhannau craidd yr amgylchedd hyfforddi gan ddefnyddio'r ffe
  
 Y cam nesaf yw mynd i ffolder 'srdk
 
-`~/src/SpeechRecDevKit$ cd srdk`
+`~/src/seilwaith $ cd srdk`
 
 a dilyn cyfarwyddiadau'r README yno [srdk/README](srdk/README.md)
 
