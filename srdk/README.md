@@ -1,4 +1,5 @@
 # Yr Offer Datblygu Adnabod Lleferydd Cymraeg 
+(*[click here](README_en.md) for the English version of this file*)
 
 O fewn y ffolder hon teipiwch :
 
