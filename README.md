@@ -1,6 +1,6 @@
-# Seilwaith Datablygu Adnabod Lleferydd Cymraeg
+# Seilwaith Datblygu Adnabod Lleferydd Cymraeg
 #### *(Infrastructure for Developing Welsh Language Speech Recognition)*
-( [click here](README_en.md) for the English version of this page
+[click here](README_en.md) for the English version of this page
 
 ## Cyflwyniad
 Mae'r project hwn yn darparu'r amgylchedd defnyddir gan Uned Technolegau Iaith Prifysgol Bangor i hyfforddi'r modelau iaith ac acwstig ar gyfer adnabod lleferydd Cymraeg.
