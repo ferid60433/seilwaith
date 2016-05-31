@@ -1,4 +1,4 @@
-# Speech Recognition Development Kit (SRDK)
+# Yr Offer Datblygu Adnabod Lleferydd Cymraeg 
 
 O fewn y ffolder hon teipiwch :
 
