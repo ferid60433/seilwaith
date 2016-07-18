@@ -34,7 +34,7 @@ Mae na dri modd i hyfforddi a chreu modelau acwstig
 
 `root@4fb715613e82:/usr/local/srdk/cy/paldaruo# cd /srdk_projects/cy/paldaruo`
 
-`root@4fb715613e82:/srdk_projects/cy/paldaruo# SRDK_0_PrepareAudio.py`
+`root@4fb715613e82:/srdk_projects/cy/paldaruo# SRDK_0_PrepareAudio.py -n paldaruo`
 
 Mae hyn yn creu ffolder /srdk_project/cy/paldaruo/audio/wav sy'n cynnwys symbolic links at y data go iawn
 
