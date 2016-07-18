@@ -35,7 +35,7 @@ There are three means of acoustic models training available:
 
 `root@4fb715613e82:/usr/local/srdk/cy/paldaruo# cd /srdk_projects/cy/paldaruo`
 
-`root@4fb715613e82:/srdk_projects/cy/paldaruo# SRDK_0_PrepareAudio.py`
+`root@4fb715613e82:/srdk_projects/cy/paldaruo# SRDK_0_PrepareAudio.py -n paldaruo`
 
 This will create a  `/srdk_project/cy/paldaruo/audio/wav` folder which will contain symbolic links to the real speech data. 
 
