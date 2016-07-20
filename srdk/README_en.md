@@ -63,6 +63,19 @@ sqlite> select uid from user_results where word_accuracy > 70;
 sqlite> .output stdout
 ```
 
+in order to retrieve further statistics on the data with over 70% accuracy:
+
+```
+sqlite> select count(*) from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+2349
+sqlite> select count(DISTINCT uid) from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+96
+sqlite> select sum(duration) from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+23093.7175208333
+sqlite> select sum(duration)/60/60 from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+6.41492153356481
+```
+
 
 ### 2. Training with a subset of Paldaruo Corpus speech corpus contributions
 Contributions from a number of uids can be used together to train more speaker independent acoustic models. The results of the above exercise especially can be used to a subset that could provide 

@@ -61,6 +61,19 @@ sqlite> select uid from user_results where word_accuracy > 70;
 sqlite> .output stdout
 ```
 
+i gael rhagor o ystadegau ar maint y data gorau ar gyfer hyfforddi. Gellir defnyddio:
+
+```
+sqlite> select count(*) from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+2349
+sqlite> select count(DISTINCT uid) from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+96
+sqlite> select sum(duration) from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+23093.7175208333
+sqlite> select sum(duration)/60/60 from ( select u.uid, u.word_accuracy, w.filename, w.duration from user_results as u, wavfiles as w where u.uid=w.uid and u.word_accuracy>70 );
+6.41492153356481
+```
+
 
 ### Hyfforddi Gyda Is-set o Cyfraniadau
 

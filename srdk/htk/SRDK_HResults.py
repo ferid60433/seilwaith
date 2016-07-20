@@ -4,7 +4,7 @@
 import os, re
 import subprocess
 import pprint
-import sqlite3
+import sqlite3, wave
 import math
 
 from argparse import ArgumentParser
@@ -13,7 +13,10 @@ con=sqlite3.connect('paldaruo-metadata.db')
 cur=con.cursor()
 
 cur.execute("DROP TABLE IF EXISTS user_results")
+cur.execute("DROP TABLE IF EXISTS wavfiles")
 cur.execute("CREATE TABLE user_results (uid PRIMARY KEY NOT NULL, word_accuracy NUMERIC NOT NULL, number_of_recordings NUMERIC NOT NULL)")
+cur.execute("CREATE TABLE wavfiles (uid NOT NULL, filename TEXT, duration REAL)")
+
 
 def get_directory_structure(rootdir):
     """
@@ -28,7 +31,39 @@ def get_directory_structure(rootdir):
         parent = reduce(dict.get, folders[:-1], dir)
         parent[folders[-1]] = subdir
     return dir
- 
+
+
+def get_wav_info(uid, audiodir):
+    wavlist = []
+    for root, dirs, files in os.walk(audiodir):
+	for file in files:
+		if ".wav" not in file:
+			continue
+
+		if "silence_" in file:
+			continue
+
+                wavfile = root + '/' + file
+                print '\t' + wavfile
+
+                duration=0.0
+                try:
+                    waveobject=wave.open(wavfile, 'r')
+                    nframes=waveobject.getnframes()
+                    rate=waveobject.getframerate()
+                    duration=nframes/float(rate)
+                    waveobject.close()
+
+                    wavlist.append((uid, file, duration))
+
+                except OSError as exc:
+                    print exc
+                    continue
+
+    cur.executemany("INSERT INTO wavfiles (uid,filename,duration) VALUES (?,?,?);", wavlist)
+    con.commit() 
+
+
 dirinfo = get_directory_structure("results")
 os.system ("rm hresults.txt")
 
@@ -38,7 +73,9 @@ for user in dirinfo["results"]:
 
 	recoutfname = "results/" + user + "/recout.mlf"
         audiowavdirectory = 'audio/wav/' + user
-	
+
+        get_wav_info(user, audiowavdirectory)
+ 	
 	no_of_recordings = len([name for name in os.listdir(audiowavdirectory) if name.startswith('sample')])
 	if os.path.isfile(recoutfname):
 
