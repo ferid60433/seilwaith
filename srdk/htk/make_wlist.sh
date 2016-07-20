@@ -6,6 +6,6 @@ echo "SENT_START" >> wlist
 echo "SENT_END" >> wlist
 
 cp /usr/local/srdk/htk/sort.py .
-python sort.py wlist
+python3 sort.py wlist
 rm sort.py
 

@@ -2,7 +2,7 @@
 cp /usr/local/srdk/htk/global.ded .
 
 cp /usr/local/srdk/htk/sort.py .
-python sort.py lexicon
+python3 sort.py lexicon
 rm sort.py
 
 cp /usr/local/srdk/htk/make_wlist.sh .

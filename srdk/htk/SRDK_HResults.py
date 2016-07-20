@@ -5,6 +5,7 @@ import os, re
 import subprocess
 import pprint
 import sqlite3
+import math
 
 from argparse import ArgumentParser
 
@@ -38,21 +39,28 @@ for user in dirinfo["results"]:
 	recoutfname = "results/" + user + "/recout.mlf"
         audiowavdirectory = 'audio/wav/' + user
 	
-	no_of_recordings = len([name for name in os.listdir(audiowavdirectory) if name.startswith('sample')])	
+	no_of_recordings = len([name for name in os.listdir(audiowavdirectory) if name.startswith('sample')])
 	if os.path.isfile(recoutfname):
+
 		hresult_output = subprocess.check_output("HResults -I words.mlf tiedlist " + recoutfname, shell=True)
 		rateObj=re.search(r'WORD\:\ \%Corr=(.*),\ Acc', hresult_output,re.M|re.I)
 		if rateObj:
 			print recoutfname + " : " + rateObj.group(1) + ", " + str(no_of_recordings)	
-			results.append((user, float(rateObj.group(1)), no_of_recordings))
+			wordaccuracy = float(rateObj.group(1))
+			if not math.isnan(wordaccuracy):
+				result = (user, wordaccuracy, no_of_recordings)
+			else:
+				result = (user, 0.0,0)
 		else:
-			print recoutfname + " : 0.0"
-			results.append((user, 0.0, 0))
-		
+			print recoutfname + " : 0.0, 0"
+			result = (user, 0.0, 0)
+	
+			
+		cur.execute("INSERT INTO user_results (uid, word_accuracy, number_of_recordings) VALUES (?,?,?)",result)
+		con.commit()
+	
+con.close()
+
 		#os.system("HResults -I words.mlf tiedlist " + recoutfname + " >> hresults.txt")
 		#os.system("echo \"\n\n\" >> hresults.txt")
 		
-cur.executemany("INSERT INTO user_results (uid, word_accuracy, number_of_recordings) VALUES (?,?,?)",results)
-con.commit()
-con.close()
-	
