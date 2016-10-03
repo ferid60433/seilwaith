@@ -7,6 +7,7 @@ cd -
 cp /usr/local/srdk/cy/lang_tools/lexicon .
 cat lexicon lexicon-additions > lexicon-full
 
+mkdir -p /srdk_projects/cy/paldaruo
 cd /srdk_projects/cy/paldaruo
 
 cp /usr/local/srdk/htk/global.ded .
