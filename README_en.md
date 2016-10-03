@@ -22,7 +22,7 @@ You will need a computer with a Linux operating system such as Ubuntu or RedHat.
 ```
 ~$ mkdir src
 ~$ cd src
-~/src$ git clone https://github.com/techiaith/seilwaith.git
+~/src$ git clone --recursive https://github.com/techiaith/seilwaith.git
 ~/src$ cd seilwaith
 ```
 
