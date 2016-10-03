@@ -26,7 +26,7 @@ Bydd angen cyfrifiadur gyda system weithredu Linux fel Ubuntu neu RedHat ar gyfe
 ```
 ~$ mkdir src
 ~$ cd src
-~/src$ git clone https://github.com/techiaith/seilwaith.git
+~/src$ git clone --recursive https://github.com/techiaith/seilwaith.git
 ~/src$ cd seilwaith
 ```
 
