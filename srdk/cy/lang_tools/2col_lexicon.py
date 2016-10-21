@@ -19,4 +19,8 @@ for word in f.read().decode('UTF-8').strip().split('\n'):
 	
 	lexiconword, word, phones = get_stressed_phones_for_htk.get_stressed_phones_for_htk(word)
 	if (len(lexiconword)>0):	
-		print ("{0} {1}".format(lexiconword.upper().encode('UTF-8'), phones))
+		try:
+			print ("{0} {1}".format(lexiconword.upper().encode('utf-8'), phones))
+		except:
+			sys.exit("Stopped") 	
+
