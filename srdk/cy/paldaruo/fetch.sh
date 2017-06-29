@@ -4,20 +4,18 @@ rm -rf /srdk_projects/cy/corpus/audio/paldaruo
 mkdir -p /srdk_projects/cy/corpus/audio/paldaruo
 
 cd /srdk_projects/cy/corpus/audio/paldaruo
-wget -r --no-parent http://techiaith.cymru/corpws/Paldaruo/
+git -c http.sslVerify=false clone --branch v3.0 --depth 1 https://git.techiaith.bangor.ac.uk/Data-Porth-Technolegau-Iaith/Corpws-Paldaruo.git
+mv -v Corpws-Paldaruo/* .
 
-mv -v techiaith.cymru/corpws/Paldaruo/* .
-
-find . -name "index.*" -type f -delete
+rm -rf Corpws-Paldaruo
 
 mv audio/wav .
-rm audio
+rmdir audio
+
 cd wav
 unzip \*.zip
 rm *.zip 
 cd -
 
-rm -rf techiaith.cymru
-
-python /usr/local/srdk/cy/paldaruo/correct_wav_extensions.py
-
+# downsample to 16kHz
+source /usr/local/srdk/htk/downsample.sh paldaruo
