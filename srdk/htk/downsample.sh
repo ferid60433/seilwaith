@@ -21,7 +21,9 @@ do
 		echo $wf
 		filename=$(basename "$wf")
 		sox $wf -c 1 -r 16000 $a/$filename
+                rm $wf
 	done
+        rm -rf $a/48kHz
 
 done
 
