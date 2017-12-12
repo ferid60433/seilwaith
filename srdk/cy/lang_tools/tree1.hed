@@ -53,9 +53,9 @@ QS  "R_VLAffricate"	{ *+ts }
 QS  "R_VLLateral"	{ *+ll }
 
 
-QS  "R_Vowel"		{ *+A,*+E,*+I,*+O,*+U,*+W,*+Y,*+AA,*+EE,*+II,*+OO,*+UU,*+WW,*+YY,*+@,*+AE,*+AI,*+AU,*+AW,*+EI,*+EU,*+EW,*+IA,*+IAE,*+IAI,*+IAU,*+IE,*+IO,*+IW,*+OE,*+OI,*+OW,*+UW,*+WY,*+YW }
+QS  "R_Vowel"		{ *+A,*+E,*+I,*+O,*+U,*+W,*+Y,*+AA,*+EE,*+II,*+OO,*+UU,*+WW,*+YY,*+@,*+@W,*+AE,*+AI,*+AU,*+AW,*+EI,*+EU,*+EW,*+IA,*+IAE,*+IAI,*+IAU,*+IE,*+IO,*+IW,*+OE,*+OI,*+OW,*+UW,*+WY,*+YW }
 QS  "R_Mono"		{ *+A,*+E,*+I,*+O,*+U,*+W,*+Y,*+@,*+AA,*+EE,*+II,*+OO,*+UU,*+WW,*+YY }
-QS  "R_Dip"		{ *+AE,*+AI,*+AU,*+AW,*+EI,*+EU,*+EW,*+IA,*+IAE,*+IAI,*+IAU,*+IE,*+IO,*+IW,*+OE,*+OI,*+OW,*+UW,*+WY,*+YW }
+QS  "R_Dip"		{ *+AE,*+AI,*+AU,*+AW,*+EI,*+EU,*+EW,*+IA,*+IAE,*+IAI,*+IAU,*+IE,*+IO,*+IW,*+OE,*+OI,*+OW,*+UW,*+WY,*+YW,*+@W }
 
 QS  "R_V-Front"		{ *+A,*+E,*+I,*+AA,*+EE,*+II }
 QS  "R_V-Central"	{ *+U,*+@,*+Y,*+UU,*+YY }
@@ -156,10 +156,12 @@ QS  "R_IA"		{ *+IA }
 QS  "R_IW"		{ *+IW }
 QS  "R_OE"		{ *+OE }
 QS  "R_OI"		{ *+OI }
-QS  "R_OW"		{ *OW }
+QS  "R_OW"		{ *+OW }
 QS  "R_UW"		{ *+UW }
+QS  "R_WN"		{ *+wn }
 QS  "R_WY"		{ *+WY }
 QS  "R_YW"		{ *+YW }
+QS  "R_@W"		{ *+@W }
 
 QS  "L_NonBoundary"	{ *-* }
 QS  "L_Silence"		{ sil-* }
@@ -211,9 +213,9 @@ QS  "L_VAffricate"	{ dz-* }
 QS  "L_VLAffricate"	{ ts-* }
 QS  "L_VLLateral"	{ ll-* }
 
-QS  "L_Vowel"		{ A-*,E-*,I-*,O-*,U-*,W-*,Y-*,AA-*,EE-*,II-*,OO-*,UU-*,WW-*,YY-*,@-*,AE-*,AI-*,AU-*,AW-*,EI-*,EU-*,EW-*,IA-*,IAE-*,IAI-*,IAU-*,IE-*,IO-*,IW-*,OE-*,OI-*,OW-*,UW-*,WY-*,YW-* }
+QS  "L_Vowel"		{ A-*,E-*,I-*,O-*,U-*,W-*,Y-*,AA-*,EE-*,II-*,OO-*,UU-*,WW-*,YY-*,@-*,AE-*,AI-*,AU-*,AW-*,EI-*,EU-*,EW-*,IA-*,IAE-*,IAI-*,IAU-*,IE-*,IO-*,IW-*,OE-*,OI-*,OW-*,UW-*,@W-*,WY-*,YW-* }
 QS  "L_Mono"		{ A-*,E-*,I-*,O-*,U-*,W-*,Y-*,@-*,AA-*,EE-*,II-*,OO-*,UU-*,WW-*,YY-* }
-QS  "L_Dip"		{ AE-*,AI-*,AU-*,AW-*,EI-*,EU-*,EW-*,IA-*,IAE-*,IAI-*,IAU-*,IE-*,IO-*,IW-*,OE-*,OI-*,OW-*,UW-*,WY-*,YW-* }
+QS  "L_Dip"		{ AE-*,AI-*,AU-*,AW-*,EI-*,EU-*,EW-*,IA-*,IAE-*,IAI-*,IAU-*,IE-*,IO-*,IW-*,OE-*,OI-*,OW-*,UW-*,@W-*,WY-*,YW-* }
 
 QS  "L_V-Front"		{ A-*,E-*,I-*,AA-*,EE-*,II-* }
 QS  "L_V-Central"	{ U-*,@-*,Y-*,UU-*,YY-* }
@@ -318,6 +320,7 @@ QS  "L_OW"		{ *OW-* }
 QS  "L_UW"		{ UW-* }
 QS  "L_WY"		{ WY-* }
 QS  "L_YW"		{ YW-* }
+QS  "L_@W"		{ @W-* }
 
 TR 2
 

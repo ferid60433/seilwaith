@@ -4,7 +4,7 @@ rm -rf /srdk_projects/cy/corpus/audio/paldaruo
 mkdir -p /srdk_projects/cy/corpus/audio/paldaruo
 
 cd /srdk_projects/cy/corpus/audio/paldaruo
-git -c http.sslVerify=false clone --branch v3.0 --depth 1 https://git.techiaith.bangor.ac.uk/Data-Porth-Technolegau-Iaith/Corpws-Paldaruo.git
+git -c http.sslVerify=false clone --branch v4.0 --depth 1 https://git.techiaith.bangor.ac.uk/Data-Porth-Technolegau-Iaith/Corpws-Paldaruo.git
 mv -v Corpws-Paldaruo/* .
 
 rm -rf Corpws-Paldaruo

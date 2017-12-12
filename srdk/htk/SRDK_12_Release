@@ -12,7 +12,7 @@ cp -v dict release
 #cp -v stats release
 
 cd release
-tar -pczf "paldaruo-$(date +"%Y-%m-%d").tar.gz" *
+tar -pczf "paldaruo-16kHz-$(date +"%Y-%m-%d").tar.gz" *
 cd - 
 
 cp -v lexicon release
